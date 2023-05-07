@@ -63,10 +63,15 @@ const Timer = () => {
       <div className="input-container">
         <span>Set a timer for </span>
         <input
+        value={minutes}
           maxLength={2}
           placeholder="00"
           onChange={(e) => {
-            setMinutes(Number(e.target.value));
+            setMinutes(
+              e.target.value.length > 2
+                ? Number(e.target.value.slice(-2))
+                : Number(e.target.value)
+            );
           }}
           type="number"
           min={0}
@@ -74,10 +79,15 @@ const Timer = () => {
         />
         <span>min : </span>
         <input
+        value={seconds}
           maxLength={2}
           placeholder="00"
           onChange={(e) => {
-            setSeconds(Number(e.target.value));
+            setSeconds(
+              e.target.value.length > 2
+                ? Number(e.target.value.slice(-2))
+                : Number(e.target.value)
+            );
           }}
           type="number"
           min={0}
