@@ -1,38 +1,165 @@
-.App {
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+}
+
+:root {
+  --main-text: #fff;
+  --backgound: rgb(0, 0, 0);
+
+  --hover-text: #c9c9c9;
+  --hover-background: rgb(74, 74, 74);
+
+  --text: rgb(81, 81, 81);
+  --border: rgb(63, 63, 63);
+
+  --active-text: rgb(226, 226, 226);
+  --active-background: rgb(65, 65, 65);
+
+  --btn-background: rgb(30, 30, 30);
+  --btn-color: rgb(97, 97, 97);
+}
+
+body {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  background-color: var(--backgound);
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+/* ------nav---------- */
+
+nav {
+  background-color: var(--backgound);
+  padding: 40px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+nav a {
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: var(--text);
+  text-decoration: none;
+  font-size: 40px;
+  padding: 20px 0px;
+  font-weight: 800;
+  /* border: 1px solid var(--border); */
+
+  margin: 1px 40px;
+}
+nav a:hover {
+  color: var(--hover-text);
+  /* border: 1px solid rgb(40, 40, 40); */
+  /* background-color: var(--hover-background); */
+}
+
+/* ---------timer----------- */
+
+.time {
+  /* letter-spacing: 5px; */
+  margin: 40px;
+  color: var(--main-text);
+  font-size: 200px;
+}
+
+/* ------ button--------- */
+
+button {
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-size: 17px;
+  font-weight: 800;
+  color: var(--btn-color);
+  background-color: var(--btn-background);
+  /* border: 1px solid var(--); */
+  padding: 18px 40px;
+  margin: 20px;
+  border-radius: 50px;
+  border: none;
+}
+
+button:focus {
+  background-color: var(--active-background);
+  color: (var(--active-text));
+}
+
+button:hover {
+  background-color: var(--hover-background);
+  color: (var(--hover-text));
+}
+button:active {
+  background-color: var(--active-background);
+  color: var(--active-text);
+}
+
+/* -------list --------- */
+
+ol {
+  position: absolute;
+  top: 100px;
+  right: 0px;
+  display: flex;
+  flex-flow: column wrap;
+  margin: 60px 70px 0px 0px;
+}
+
+li {
+  font-size: 15px;
+  font-weight: 800;
+  list-style: inside;
+  text-align: center;
+  padding: 18px 30px;
+
+  right: -1250px;
+  top: -400px;
+  margin: 10px;
+  display: inline-block;
+
+  background-color: var(--btn-background);
+  /* border: 1px solid rgb(255, 95, 95); */
+  border-radius: 40px;
+}
+
+/* -----input------ */
+
+.input-container {
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  display: block;
+  position: absolute;
+  text-align: center;
+  /* border: 1px solid white; */
+  color: var(--text);
+  right: 0;
+  left: 0;
+  margin: 0 auto 0 auto;
+}
+input {
+  width: 100px;
+  text-align: center;
+  font-size: larger;
+  font-weight: 700;
+  color: var(--active-text);
+  padding: 8px 25px;
+  margin: 10px;
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  background-color: var(--btn-background);
+  outline: none;
+}
+
+input:focus {
+  border: 1px solid var(--active-text);
+  background-color: var(--hover-background);
+}
+input:active {
+  border: 1px solid var(--active-background);
+}
+input:hover {
+  border: 1px solid var(--hover-text);
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
