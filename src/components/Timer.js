@@ -63,6 +63,7 @@ const Timer = () => {
       <div className="input-container">
         <span>Set a timer for </span>
         <input
+          maxLength={2}
           placeholder="00"
           onChange={(e) => {
             setMinutes(Number(e.target.value));
@@ -73,6 +74,7 @@ const Timer = () => {
         />
         <span>min : </span>
         <input
+          maxLength={2}
           placeholder="00"
           onChange={(e) => {
             setSeconds(Number(e.target.value));
@@ -83,10 +85,15 @@ const Timer = () => {
         />
         <span>sec</span>
       </div>
-      <h1 className="time">
-        {minutes < 10 ? "0" + minutes : minutes} :{" "}
-        {seconds < 10 ? "0" + seconds : seconds}
-      </h1>
+
+      <div>
+        <h1 className="time">{minutes < 10 ? "0" + minutes : minutes}</h1>{" "}
+        <span className="letter">m</span>
+        <h1 className="time colon">:</h1>{" "}
+        <h1 className="time"> {seconds < 10 ? "0" + seconds : seconds}</h1>
+        <span className="letter">s</span>
+      </div>
+
       <button
         onClick={() => {
           setIsStop(false);

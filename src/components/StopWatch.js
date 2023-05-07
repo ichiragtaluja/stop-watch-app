@@ -39,13 +39,15 @@ const StopWatch = () => {
 
   return (
     <>
-      <h1 className="time">
-        {minutes < 10 ? "0" + minutes : minutes} :{" "}
-        {seconds < 10 ? "0" + seconds : seconds}
-      </h1>
+      <div>
+        <h1 className="time">{minutes < 10 ? "0" + minutes : minutes}</h1>{" "}
+        <span className="letter">m</span>
+        <h1 className="time colon">:</h1>{" "}
+        <h1 className="time"> {seconds < 10 ? "0" + seconds : seconds}</h1>
+        <span className="letter">s</span>
+      </div>
       <button onClick={startStopHandler}>{isStop ? "Start" : "Stop"}</button>
       <button onClick={splitTimeHandler}>Split Time</button>
-
       <button onClick={resentHandler}>Reset</button>
       <ol>
         {splitTime.map(({ minutes, seconds }, index) => (
