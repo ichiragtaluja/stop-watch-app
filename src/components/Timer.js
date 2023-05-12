@@ -61,9 +61,9 @@ const Timer = () => {
   return (
     <>
       <div className="input-container">
-        <span>Set a timer for </span>
+        <span>Set a timer for time</span>
         <input
-        value={minutes}
+          value={minutes}
           maxLength={2}
           placeholder="00"
           onChange={(e) => {
@@ -79,7 +79,7 @@ const Timer = () => {
         />
         <span>min : </span>
         <input
-        value={seconds}
+          value={seconds}
           maxLength={2}
           placeholder="00"
           onChange={(e) => {
